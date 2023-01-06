@@ -1,20 +1,46 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect, useState } from 'react'
 import styles from '../style.css'
+import citiesData from '../config/config'
 
-export default function Header() {
+export default function Content() {
+    debugger
+    const citiesLength = citiesData?.length;
+    const [city, setCity] = useState([])
+    useEffect(() => {
+        debugger
+        citiesData.map(cityData => {
+            if (window.location.pathname === cityData.route) {
+                setCity(cityData)
+            }
+        })
+    }, [])
+
+    const nextPage = () => {
+        debugger
+        const next = (city.id + 1) % citiesLength
+        window.location.pathname = citiesData[next].route
+        setCity(citiesData[next])
+    }
+
+    const prevPage = () => {
+        debugger
+        const prev = (city.id - 1) % citiesLength
+        window.location.pathname = citiesData[prev].route
+        setCity(citiesData[prev])
+    }
+
     return (
         <>
             <div className="column middle">
-                <h2>Main Content</h2>
-                <img style={{ width: '40vw', height: '40vh' }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgXmDh4QozqFUd60sl8bVxRGhOsLXA25VCKAS7JqYhPyPSZGUvq0hYF_0U8wnqcdpAxTY&usqp=CAU' />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+                <h2>{city?.title}</h2>
+                {/* <img style={{ width: '40vw', height: '40vh' }} src={city?.images[0]} /> */}
+                <p>{city?.content}</p>
                 <div className='grid_btn'>
-                    <button className="btn_next"></button>
-                    <button className="btn_next"></button>
+                    <button onClick={nextPage} className="btn_next"></button>
+                    <button onClick={prevPage} className="btn_next"></button>
                 </div>
 
             </div>
         </>
-    ) 
+    )
 } 
