@@ -19,4 +19,4 @@ const citiesData = [{
         route: 'rome',
     }
 ]
-export default  citiesData;
+export default citiesData;

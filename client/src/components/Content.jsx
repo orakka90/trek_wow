@@ -3,30 +3,34 @@ import styles from '../style.css'
 import citiesData from '../config/config'
 
 export default function Content() {
-    debugger
+    console.log(citiesData);
     const citiesLength = citiesData?.length;
-    const [city, setCity] = useState([])
+    const [city, setCity] = useState({})
     useEffect(() => {
-        debugger
+        if (window.location.pathname === "/") {
+            setCity(citiesData[0])
+            return
+        }
         citiesData.map(cityData => {
-            if (window.location.pathname === cityData.route) {
+            if (window.location.pathname == "/" + cityData.route) {
                 setCity(cityData)
+                return
             }
         })
+
     }, [])
 
     const nextPage = () => {
-        debugger
-        const next = (city.id + 1) % citiesLength
+        const next = (city.id) % citiesLength
+        setCity(citiesData[next], next)
         window.location.pathname = citiesData[next].route
-        setCity(citiesData[next])
     }
 
     const prevPage = () => {
-        debugger
-        const prev = (city.id - 1) % citiesLength
-        window.location.pathname = citiesData[prev].route
+        const prev = (city.id) % citiesLength
         setCity(citiesData[prev])
+        window.location.pathname = citiesData[prev].route
+
     }
 
     return (
