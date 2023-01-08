@@ -9,6 +9,9 @@ export default function Content(props) {
         <>
             <div className="column middle">
                 <h2>{city?.title}</h2>
+                <hr />
+                <h4>{city?.title}</h4>
+                <hr />
                 {/* <img style={{ width: '40vw', height: '40vh' }} src={city?.images[0]} /> */}
                 <p>{city?.content}</p>
                 <div className='grid_btn'>
