@@ -4,6 +4,8 @@ import styles from '../style.css'
 export default function Content(props) {
     const city = props.city
     const citiesLength = props.citiesLength
+    let img1 = props.city.images ? props.city.images[0] : ""
+    let img2 = props.city.images ? props.city.images[1] : ""
 
     return (
         <>
@@ -12,7 +14,10 @@ export default function Content(props) {
                 <hr />
                 <h4>{city?.title}</h4>
                 <hr />
-                {/* <img style={{ width: '40vw', height: '40vh' }} src={city?.images[0]} /> */}
+                <div className="display: inline-block;">
+                    <img style={{ width: '20vw', height: '40vh' }} src={(img1)} />
+                    <img style={{ width: '20vw', height: '40vh' }} src={(img2)} />
+                </div>
                 <p>{city?.content}</p>
                 <div className='grid_btn'>
                     {

@@ -34,7 +34,6 @@ export default function MainPage() {
         const prev = (city.id - 1) % citiesLength
         setCity(citiesData[prev])
         window.location.pathname = citiesData[prev].route
-
     }
     return (
         <>
