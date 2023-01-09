@@ -21,15 +21,16 @@ export default function Content(props) {
                 <p>{city?.content}</p>
                 <div className='grid_btn'>
                     {
-                        city.id !== citiesLength - 1 ?
-
-                            <button onClick={() => props.nextPage()} className="btn_next">Next</button> : <></>
-                    }
-                    {
                         city.id !== 0 ?
                             <button onClick={() => props.prevPage()} className="btn_next"> Prev</button>
                             : <></>
                     }
+                    {
+                        city.id !== citiesLength - 1 ?
+
+                            <button onClick={() => props.nextPage()} className="btn_next">Next</button> : <></>
+                    }
+
                 </div>
 
             </div>

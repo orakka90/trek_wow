@@ -1,5 +1,4 @@
-import React, { Component, useEffect, useState } from 'react'
-import styles from '../style.css'
+import React, { useEffect, useState } from 'react'
 import Content from './Content'
 import Footer from './Footer'
 import LeftAdd from './LeftAdd'
@@ -7,17 +6,20 @@ import RightAdd from './RightAdd'
 import citiesData from '../config/config'
 
 export default function MainPage() {
-    console.log(citiesData);
     const citiesLength = citiesData?.length;
     const [city, setCity] = useState({})
+    const [homeRoute, setRoute] = useState(true)
+
     useEffect(() => {
         if (window.location.pathname === "/") {
             setCity(citiesData[0])
+            setRoute(true)
             return
         }
         citiesData.map(cityData => {
-            if (window.location.pathname == "/" + cityData.route) {
+            if (window.location.pathname === "/" + cityData.route) {
                 setCity(cityData)
+                setRoute(false)
                 return
             }
         })
@@ -37,14 +39,21 @@ export default function MainPage() {
     }
     return (
         <>
-            <div className='row'>
-                <LeftAdd></LeftAdd>
-                <Content city={city} prevPage={prevPage} nextPage={nextPage} citiesLength={citiesLength}></Content>
-                <RightAdd></RightAdd>
-            </div>
-            <div className='row_footer'>
-                <Footer></Footer>
-            </div>
+            {
+                homeRoute === false ?
+                    <div>
+                        <div className='row'>
+                            <LeftAdd></LeftAdd>
+                            <Content city={city} prevPage={prevPage} nextPage={nextPage} citiesLength={citiesLength}></Content>
+                            <RightAdd></RightAdd>
+                        </div>
+                        <div className='row_footer'>
+                            <Footer></Footer>
+                        </div>
+                    </div>
+                    :
+                    <></>
+            }
         </>
     )
 }
