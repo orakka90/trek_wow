@@ -6,7 +6,7 @@ export default function Content(props) {
     const citiesLength = props.citiesLength
     let img1 = props.city.images ? props.city.images[0] : ""
     let img2 = props.city.images ? props.city.images[1] : ""
-
+    console.log(props);
     return (
         <>
             <div className="column middle">
