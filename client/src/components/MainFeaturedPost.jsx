@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
+import styles from '../style.css'
 
 function MainFeaturedPost(props) {
     const { post } = props;
@@ -19,11 +20,11 @@ function MainFeaturedPost(props) {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
-                backgroundImage: `url(${post.image})`,
+                backgroundImage: `url(${post.images[0]})`,
             }}
         >
             {/* Increase the priority of the hero background image */}
-            {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+            {<img style={{ display: 'none' }} src={post.images[0]} alt={post.imageText} />}
             <Box
                 sx={{
                     position: 'absolute',
@@ -46,8 +47,8 @@ function MainFeaturedPost(props) {
                         <Typography component="h1" variant="h3" color="inherit" gutterBottom>
                             {post.title}
                         </Typography>
-                        <Typography variant="h5" color="inherit" paragraph>
-                            {post.description}
+                        <Typography variant="h5" className='description_card' color="inherit" paragraph>
+                            {post.content}
                         </Typography>
                         <Link variant="subtitle1" href="#">
                             {post.linkText}

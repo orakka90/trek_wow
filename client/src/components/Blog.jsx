@@ -2,9 +2,7 @@ import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import citiesData from '../config/config'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
@@ -64,9 +62,9 @@ export default function Blog() {
             <Container maxWidth="lg">
                 <Header title="Blog" sections={sections} />
                 <main>
-                    <MainFeaturedPost post={mainFeaturedPost} />
+                    <MainFeaturedPost post={citiesData[0]} />
                     <Grid container spacing={4}>
-                        {featuredPosts.map((post) => (
+                        {citiesData.map((post) => (
                             <FeaturedPost key={post.title} post={post} />
                         ))}
                     </Grid>
