@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import citiesData from '../config/config'
 import Page from './Page';
 import MainPage from './MainPage';
+import Blog from './Blog';
 
 
 export default function Controller() {
@@ -28,7 +29,7 @@ export default function Controller() {
                 homeRoute === false ?
                     <Page></Page>
                     :
-                    <MainPage></MainPage>
+                    <Blog></Blog>
             }
         </>
     )
