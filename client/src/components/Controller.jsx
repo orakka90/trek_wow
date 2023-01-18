@@ -27,32 +27,14 @@ function createPixel() {
     setLocalStorage("pixel", JSON.stringify(pixel));
 }
 export default function Controller() {
-    const [homeRoute, setRoute] = useState(true)
 
     useEffect(() => {
         createPixel()
-        if (window.location.pathname === "/") {
-            setRoute(true)
-            return
-        }
-        citiesData.map(cityData => {
-            if (window.location.pathname === "/" + cityData.route) {
-                setRoute(false)
-                return
-            }
-        })
-
     }, [])
 
 
     return (
         <>
-            {
-                homeRoute === false ?
-                    <Page></Page>
-                    :
-                    <MainPage></MainPage>
-            }
         </>
     )
 }
