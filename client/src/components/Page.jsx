@@ -4,35 +4,34 @@ import Footer from './Footer'
 import LeftAdd from './LeftAdd'
 import RightAdd from './RightAdd'
 import citiesData from '../config/config'
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 
 export default function Page() {
     const [city, setCity] = useState({})
     const citiesLength = citiesData?.length;
-    const navigate = useNavigate();
     const location = useLocation();
 
     useEffect(() => {
-        debugger
         citiesData.map(cityData => {
             if (location.pathname === "/" + cityData.route) {
                 setCity(cityData)
                 return
             }
         })
+
     }, []);
 
     const nextPage = () => {
         const next = (city.id + 1) % citiesLength
         setCity(citiesData[next], next)
-        window.location.pathname = `/${citiesData[next].route}`
+        window.history.replaceState(null, '', `/${citiesData[next].route}`)
     }
 
     const prevPage = () => {
         const prev = (city.id - 1) % citiesLength
         setCity(citiesData[prev])
-        window.location.pathname = `/${citiesData[prev].route}`
+        window.history.replaceState(null, '', `/${citiesData[prev].route}`)
     }
     return (
         <div>
