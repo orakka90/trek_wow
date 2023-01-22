@@ -1,46 +1,20 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import React from 'react';
+import styles from '../style.css'
 
-function Copyright() {
+const Footer = () => {
     return (
-        <Typography variant="body2" color="text.secondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
+        <div class="footer-basic">
+            <footer>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="/about-us">About Us</a></li>
+                    <li class="list-inline-item"><a href="/contact-us">Contact Us</a></li>
+                    <li class="list-inline-item"><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li class="list-inline-item"><a href="/terms-of-use">Terms of Use</a></li>
+                </ul>
+                <p class="copyright">Company Name © 2018</p>
+            </footer>
+        </div>
     );
-}
-
-function Footer(props) {
-    const { description, title } = props;
-
-    return (
-        <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
-            <Container maxWidth="lg">
-                <Typography variant="h6" align="center" gutterBottom>
-                    {title}
-                </Typography>
-                <Typography
-                    variant="subtitle1"
-                    align="center"
-                    color="text.secondary"
-                    component="p"
-                >
-                    {description}
-                </Typography>
-                <Copyright />
-            </Container>
-        </Box>
-    );
-}
-
-
+};
 
 export default Footer;

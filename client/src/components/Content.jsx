@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import styles from '../style.css'
+import { websiteConfig } from '../config/config'
+
 
 export default function Content(props) {
     const city = props.city
     const citiesLength = props.citiesLength
     let img1 = props.city.images ? props.city.images[0] : ""
     let img2 = props.city.images ? props.city.images[1] : ""
-    console.log(props);
     return (
         <>
             <div className="column middle">
@@ -18,7 +19,7 @@ export default function Content(props) {
                     <img style={{ width: '20vw', height: '40vh' }} src={(img1)} />
                     <img style={{ width: '20vw', height: '40vh' }} src={(img2)} />
                 </div>
-                <p>{city?.content}</p>
+                <p className="font-family: 'Montserrat', sans-serif; ">{city?.content}</p>
                 <div className='grid_btn'>
                     {
                         city.id !== 0 ?

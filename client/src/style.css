@@ -114,10 +114,35 @@
     justify-content: space-around;
 }
 
-.footer {
-    width: 45vw;
+.footer-basic {
+    margin-top: 1rem;
+    padding: 40px 0;
+    background-color: #194588;
+    justify-content: space-around;
+    color: #e5e9ed;
+}
+
+.footer-basic ul {
+    padding: 0;
+    list-style: none;
     text-align: center;
-    background: rgb(221, 221, 221);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer-basic li {
+    padding: 0 10px;
+}
+
+.footer-basic ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity: 1;
 }
 
 

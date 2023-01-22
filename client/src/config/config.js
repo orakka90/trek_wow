@@ -33,4 +33,9 @@ const citiesData = [{
         route: 'turkey',
     }
 ]
-export default citiesData;
+
+const websiteConfig = {
+    websiteName: "Trek WoW",
+    font_family: ""
+}
+export { citiesData, websiteConfig };

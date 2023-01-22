@@ -3,7 +3,7 @@ import Content from './Content'
 import Footer from './Footer'
 import LeftAdd from './LeftAdd'
 import RightAdd from './RightAdd'
-import citiesData from '../config/config'
+import { citiesData } from '../config/config'
 import { useLocation } from "react-router-dom";
 
 
