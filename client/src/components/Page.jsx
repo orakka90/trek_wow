@@ -40,9 +40,7 @@ export default function Page() {
                 <Content city={city} prevPage={prevPage} nextPage={nextPage} citiesLength={citiesLength}></Content>
                 <RightAdd></RightAdd>
             </div>
-            <div className='row_footer'>
-                <Footer></Footer>
-            </div>
+            <Footer></Footer>
         </div>
     )
 }

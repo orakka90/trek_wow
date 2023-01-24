@@ -10,7 +10,6 @@ import {
 function App() {
   return (
     <div className="App">
-      <Header></Header>
       <Controller></Controller>
       <Routes>
         <Route exact path="/" element={<MainPage />} />

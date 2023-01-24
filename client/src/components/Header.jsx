@@ -1,31 +1,17 @@
 import * as React from 'react';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import logo from './images/icon-modified.png'; // with import
+import styles from '../style.css'
 
 function Header(props) {
     const { title } = props;
 
     return (
-        <React.Fragment>
-            <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Typography
-                    component="h2"
-                    variant="h5"
-                    color="inherit"
-                    align="center"
-                    noWrap
-                    sx={{ flex: 1 }}
-                >
-                    {title}
-                </Typography>
-            </Toolbar>
-            <Toolbar
-                component="nav"
-                variant="dense"
-                sx={{ justifyContent: 'space-between', overflowX: 'auto' }}
-            >
-            </Toolbar>
-        </React.Fragment>
+        <div className='header'>
+            <img className='logo' src={logo} />
+        </div>
+
     );
 }
 
