@@ -8,15 +8,15 @@ const Footer = () => {
             <div className='left column'>
                 <img className='logo' src={logo} />
             </div>
-            <div class="footer-basic">
+            <div className="footer-basic">
                 <footer>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="/about-us">About Us</a></li>
-                        <li class="list-inline-item"><a href="/contact-us">Contact Us</a></li>
-                        <li class="list-inline-item"><a href="/privacy-policy">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="/terms-of-use">Terms of Use</a></li>
+                    <ul className="list-inline">
+                        <li className="list-inline-item"><a href="/about-us">About Us</a></li>
+                        <li className="list-inline-item"><a href="/contact-us">Contact Us</a></li>
+                        <li className="list-inline-item"><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li className="list-inline-item"><a href="/terms-of-use">Terms of Use</a></li>
                     </ul>
-                    <p class="copyright">Company Name © 2018</p>
+                    <p className="copyright">Company Name © 2018</p>
                 </footer>
             </div>
         </div >
