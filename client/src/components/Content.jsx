@@ -4,14 +4,15 @@ import logo from './images/icon-modified.png'; // with import
 
 
 export default function Content(props) {
-    const city = props.city
+    let city = props.city
     const citiesLength = props.citiesLength
     let img1 = props.city.images ? props.city.images[0] : ""
     let img2 = props.city.images ? props.city.images[1] : ""
+
     return (
         <>
             <div className="column middle">
-                <img className='logo' style={{ width: '3vw', height: '6vh', alignItems: 'normal' }} src={logo} />
+                <img className='logo' style={{ width: '3vw', height: '6vh', alignItems: 'normal' }} onClick={() => props.homePage()} src={logo} />
                 <hr />
                 <h4>{city?.sub_title}</h4>
                 <hr />

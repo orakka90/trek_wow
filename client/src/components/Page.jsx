@@ -33,11 +33,16 @@ export default function Page() {
         setCity(citiesData[prev])
         window.history.replaceState(null, '', `/${citiesData[prev].route}`)
     }
+
+    const homePageClick = () => {
+        window.location.pathname = "/"
+    }
+
     return (
         <div>
             <div className='row'>
                 <LeftAdd></LeftAdd>
-                <Content city={city} prevPage={prevPage} nextPage={nextPage} citiesLength={citiesLength}></Content>
+                <Content city={city} prevPage={prevPage} nextPage={nextPage} homePage={homePageClick} citiesLength={citiesLength}></Content>
                 <RightAdd></RightAdd>
             </div>
             <Footer></Footer>
