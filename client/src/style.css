@@ -8,6 +8,26 @@
     float: left;
 }
 
+.image {
+    max-width: '20vw';
+    max-height: '40vh';
+}
+
+.image.container {
+    display: flex;
+}
+
+.content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: normal;
+    font-family: 'PT Serif', sans-serif;
+    font-size: larger;
+    text-align: start;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.592);
+}
+
 
 /* Left and right column */
 
@@ -92,14 +112,43 @@
     display: flex;
 }
 
+.grid_btn {
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-color: rgb(172, 169, 169);
+    margin-top: 1rem;
+    background-color: rgb(242, 240, 236);
+    width: 40vw;
+    /* width: inherit; */
+    display: inline-block;
+}
+
 .btn_next {
     background-color: #4CAF50;
     /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 32px;
     text-align: center;
-    width: 40%;
+    width: 60%;
+    height: 7vh;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btn_prev {
+    background-color: #dd8323;
+    /* orange */
+    border: none;
+    padding: 10px 32px;
+    color: white;
+    text-align: center;
+    width: 30%;
+    height: 7vh;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
@@ -111,11 +160,6 @@
     max-width: 10rem;
     max-height: 10rem;
     text-align: left;
-}
-
-.grid_btn {
-    display: flex;
-    justify-content: space-around;
 }
 
 .footer {
@@ -161,5 +205,35 @@
     .column.side,
     .column.middle {
         width: 100%;
+    }
+    .btn_next {
+        background-color: #4CAF50;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 5px 12px;
+        text-align: center;
+        width: 60%;
+        height: 7vh;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 5px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .btn_prev {
+        background-color: #dd8323;
+        /* orange */
+        border: none;
+        padding: 5px 12px;
+        color: white;
+        text-align: center;
+        width: 30%;
+        height: 7vh;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 5px;
+        margin: 4px 2px;
+        cursor: pointer;
     }
 }
