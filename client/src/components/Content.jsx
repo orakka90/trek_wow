@@ -12,13 +12,13 @@ export default function Content(props) {
     return (
         <>
             <div className="column middle">
-                <img className='logo' style={{ width: '3vw', height: '6vh', alignItems: 'normal' }} onClick={() => props.homePage()} src={logo} />
+                <img className='logo'  onClick={() => props.homePage()} src={logo} />
                 <hr />
                 <h4>{city?.sub_title}</h4>
                 <hr />
                 <div className="display: inline-block;">
-                    <img style={{ width: '20vw', height: '40vh' }} src={(img1)} />
-                    <img style={{ width: '20vw', height: '40vh' }} src={(img2)} />
+                    <img className='img_content' src={(img1)} />
+                    <img className='img_content' src={(img2)} />
                 </div>
                 <div className='grid_btn'>
                     {
